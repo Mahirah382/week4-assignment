@@ -19,14 +19,13 @@ app.get('/', (req, res) => {
 
 app.get('/food', async (req, res) => {
     const data = await db.query(`SELECT * FROM food`)
-    const foods = data.rows
-    res.status(200).json(foods)
+    res.status(200).json(data.rows)
 })
 
 app.post('/food', async (req, res) => {
     const userData = req.body
-    const foods = userData.rows
-    const dbQuery = await db.query(`INSERT INTO food(name, favourite_food) VALUES ($1, $2)`, [userData.name, userData.favourite_food])
+    //const dbQuery = 
+    await db.query(`INSERT INTO food(name, favourite_food) VALUES ($1, $2)`, [userData.name, userData.favourite_food])
 
     res.status(200).json({message: "added message"})
 })

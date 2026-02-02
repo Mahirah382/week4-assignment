@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>client</title>
     <script type="module" src="/src/main.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/style.css">
   </head>
   <body>
 
     <h1 class="title">What's your favourite food?</h1>
 
-    <div id="app"></div>
-    <p>Name:</p>
-    <p>Favourite Food</p>
-
     <form id="form">
-    <input type="text" name="user_name"/>
+    <label for="name">Name:</label>
+    <input type="text" name="name"/>
+    <label for="favourite_food">Favourite food:</label>
     <input type="text" name="favourite_food"/>
     <button type="submit">Submit</button>
     </form>
 
+    <div id="app"></div>
+    
   </body>
 </html>

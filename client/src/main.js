@@ -1,10 +1,11 @@
 const display = document.getElementById('app')
 const form = document.getElementById('form')
-const baseURL = 'http://localhost:4242'
+const baseURL = //'https://week4-assignment-client-ihk4.onrender.com'
+'http://localhost:4242'
 
 
 async function fetchData() {
-    const response = await fetch (`${baseURL}/foods`)
+    const response = await fetch (`${baseURL}/food`)
     const foods = await response.json()
 
     console.log(foods)
@@ -21,16 +22,14 @@ async function displayMessages() {
         const userName = document.createElement('p')
         const content = document.createElement('p')
 
-        userName.textContent = food.msg_name
-        content.textContent = food.content
+        userName.textContent = `Name: ${food.name}`
+        content.textContent = `Favourite food: ${food.favourite_food}`
 
         div.append(userName, content)
 
         display.appendChild(div)
     });
 }
-
-//displayMessages();
 
 async function handleSubmit(e) {
     e.preventDefault()
@@ -39,7 +38,7 @@ async function handleSubmit(e) {
     const userInput = Object.fromEntries(formData);
     const userInputJSON = JSON.stringify(userInput);
 
-    const response = await fetch (`${baseURL}/foods`, {
+    const response = await fetch (`${baseURL}/food`, {
         headers: {
             "Content-Type" :"application/json"
         },
