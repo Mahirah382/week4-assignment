@@ -45,7 +45,7 @@ async function handleSubmit(e) {
         method : "POST",
         body : userInputJSON
     })
-    window.location.reload()
+    
 }
 
 displayMessages();
