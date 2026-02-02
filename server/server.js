@@ -24,8 +24,7 @@ app.get('/food', async (req, res) => {
 
 app.post('/food', async (req, res) => {
     const userData = req.body
-    const dbQuery = 
-    await db.query(`INSERT INTO food(name, favourite_food) VALUES ($1, $2)`, [userData.name, userData.favourite_food])
+    const dbQuery = await db.query(`INSERT INTO food(name, favourite_food) VALUES ($1, $2)`, [userData.name, userData.favourite_food])
 
     res.status(200).json({message: "added message"})
 })

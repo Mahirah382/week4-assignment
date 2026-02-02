@@ -45,6 +45,11 @@ async function handleSubmit(e) {
         method : "POST",
         body : userInputJSON
     })
+
+    form.reset()
+
+    display.innerHTML = ''
+    await displayMessages();
     
 }
 
