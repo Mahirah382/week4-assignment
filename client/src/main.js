@@ -1,7 +1,7 @@
 const display = document.getElementById('app')
 const form = document.getElementById('form')
-const baseURL = //'https://week4-assignment-client-ihk4.onrender.com'
-'http://localhost:4242'
+const baseURL = 'https://week4-assignment-client-ihk4.onrender.com'
+//'http://localhost:4242'
 
 
 async function fetchData() {
