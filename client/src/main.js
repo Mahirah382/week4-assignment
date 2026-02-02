@@ -1,6 +1,6 @@
 const display = document.getElementById('app')
 const form = document.getElementById('form')
-const baseURL = 'https://week4-assignment-client-ihk4.onrender.com'
+const baseURL = 'https://week4-assignment-server.onrender.com'
 //'http://localhost:4242'
 
 
@@ -16,6 +16,8 @@ async function fetchData() {
 
 async function displayMessages() {
     const foods = await fetchData()
+
+    display.innerHTML= ""
 
     foods.forEach((food) => {
         const div = document.createElement('div')
@@ -48,7 +50,7 @@ async function handleSubmit(e) {
 
     form.reset()
 
-    display.innerHTML = ''
+    display.innerHTML = ""
     await displayMessages();
     
 }
